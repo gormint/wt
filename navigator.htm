@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>Navigator object demo</title>
+	</head>
+	<body>
+		<script language="JavaScript">
+			for(i in window.navigator) {
+				document.writeln(i + " : " + window.navigator[i] + "<br>");
+				//if(i == "plugins")
+					for(j in window.navigator[i])
+						document.writeln(j);
+			}
+			document.writeln('javaEnabled : ' + navigator.javaEnabled() + '<br>');
+			document.writeln('taintEnabled : ' + navigator.taintEnabled() + '<br>');
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="books.xsl"?>
+<bookstore>
+	<book category="literature">
+		<title lang="beng">Sanchoita</title>
+		<author>Rabindranath Tagore</author>
+		<year>2009</year>
+		<price>200.00</price>
+	</book>
+	<book category="literature">
+		<title lang="en">Gitanjali</title>
+		<author>Rabindranath Tagore</author>
+		<year>2008</year>
+		<price>29.00</price>
+	</book>
+	<book category="WEB">
+		<title lang="en">Essential XML</title>
+		<author>Don Box</author>
+		<year>2000</year>
+		<price>150</price>
+	</book>
+</bookstore>

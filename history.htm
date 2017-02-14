@@ -1,0 +1,15 @@
+<html>
+	<head>
+		<title>History object demo</title>
+	</head>
+	<body>
+		<script language="JavaScript">
+			for(i in window.history)
+				document.writeln(i + " : " + window.history[i] + "<br>");
+			document.writeln(history.next);
+			document.writeln(history.previous);
+			document.writeln(history.current);
+		</script>
+		<input type="button" value="clickMe" onClick="history.go('http://127.0.0.1:8080/wt/location.htm?x=2&y=3')">
+	</body>
+</html>

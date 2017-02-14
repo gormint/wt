@@ -1,0 +1,15 @@
+<html>
+	<head>
+		<title>Location object demo</title>
+	</head>
+	<body>
+		<script language="JavaScript">
+			for(i in location)
+				document.writeln(i + " : " + location[i] + "<br>");
+			function f() {
+				location.href = "http://www.google.com";
+			}
+		</script>
+		<input type="button" value="clickMe" onClick="f()");>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title>Window object demo</title>
+	</head>
+	<body>
+		<script language="JavaScript">
+			for(i in window) {
+/*				if(typeof(window[i]) == 'object') {
+				
+					document.writeln('---' + i + '<br>');				
+					for(j in window[i])
+						document.writeln('&nbsp;&nbsp;' + j + ' : ' + window[i][j]+'<br>');
+				}
+				else  
+*/
+					document.writeln(i + " : " + window[i] + "<br>");
+			}
+		</script>
+
+	</body>
+</html>

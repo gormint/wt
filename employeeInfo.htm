@@ -1,0 +1,52 @@
+<html>
+	<head><title></title>
+		<script language="JavaScript">
+			function getInfo(employee) {
+				try {
+					xmlhttp = new XMLHttpRequest();
+				}catch(e1) {
+					try {
+						xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");	
+					}catch(e2) {
+						try {
+							xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+						}catch(e3) {
+							alert('AJAX not supported');
+							return false;
+						}
+					}
+				}
+				xmlhttp.onreadystatechange = processResponse;
+				url = 'getEmployeeInfo.jsp?employee='+employee;
+				xmlhttp.open("GET",url,true);
+				xmlhttp.send(null);
+			}
+
+			function processResponse() {
+				if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					try {
+						xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+						xmlDoc.loadXML(xmlhttp.responseText);
+						x = xmlDoc.getElementsByTagName("info")[0];
+						msg = '<table border="1" cellpadding="0" cellspacing="0">';
+						for(var i = 0; i < x.childNodes.length; i++) {
+							name = x.childNodes[i].nodeName;		
+							value = x.childNodes[i].childNodes[0].nodeValue;
+							msg += '<tr><td>'+name+'</td><td>'+value+'<input type="text" name="'+name+'" value="'+value+'"></td></tr>';
+						}
+						msg += '</table>';
+						document.getElementById('result').innerHTML = msg;
+					}catch(e) {alert(e);}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<select onChange="getInfo(this.value)">		
+			<option value="Uttam Roy">Uttam Roy</option>
+			<option value="Parama Bhaumik">Parama Bhaumik</option>		
+			<option value="Bibhas Chandra Dhara">Bibhas Chandra Dhara</option>
+		</select>
+		<div id='result'></div> 
+	</body>
+</html>
